@@ -1,0 +1,1245 @@
+
+	
+	/*COMMON STYLES*/
+html, body {
+	height: 100%;
+	/*font-family: 'Raleway', sans-serif;*/
+	font-family: 'Roboto', sans-serif;
+}
+p,h1,h2,h3,h4,h5,ul {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style-type: none; 
+}
+a:hover {
+	color: #ffbf02;
+	text-decoration: none;
+}
+select, textarea {
+	font-family: 'Roboto', sans-serif;
+}
+button, select:focus {
+	outline:0px !important;
+    -webkit-appearance:none;
+    border: none;
+}
+input:focus {
+	outline:0px !important;
+    -webkit-appearance:none;    
+}
+
+.border-left {
+	border-left: 1px solid #eaca07;
+}
+.remove-padding-right {padding-right: 0;}
+
+/*remove select drop down arrow*/
+select {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+select::-ms-expand {
+    display: none;
+}
+
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 400px;
+        width: 400px;
+      }
+  
+ /*Validations */
+#validate-j-d{
+	
+	border:1px red solid;
+	padding:10px;
+	float:left;
+	
+}
+
+#validate-j-d-p{
+	
+	border:1px red solid;
+	padding:15px;
+	float:left;
+        margin: 30px;
+	
+}
+
+
+
+/*maps hide*/
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+    background-image: none !important;
+    height: 0px;
+}
+
+/*Ajax Loader*/
+#wait, #wait-pas{
+	
+	font-size:55px;
+	color:#ffbf02;
+	text-align:left !important;
+}
+.display-none {
+	
+	display:none !important;
+	
+}
+
+
+.display-block  {
+	
+	display:inline !important;
+
+}
+
+
+.add-opacity-booking{
+	
+
+/* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=40);
+
+  /* Netscape */
+  -moz-opacity: 0.4;
+
+  /* Safari 1.x */
+  -khtml-opacity: 0.4;
+
+  /* other  */
+  opacity: 0.4;
+  
+}
+
+
+/*Loading Spin*/
+.loader {
+
+	margin: 0 auto;
+
+	border: 2px solid #fff;
+
+	border-radius: 50%;
+
+	border-top: 2px solid #ffbf02;
+
+	width: 26px;
+
+	height: 26px;
+
+	-webkit-animation: spin 0.7s linear infinite;
+
+	animation: spin 0.7s linear infinite;
+
+}
+
+
+
+@-webkit-keyframes spin {
+
+	0% { -webkit-transform: rotate(0deg); }
+
+	100% { -webkit-transform: rotate(360deg); }
+
+}
+
+
+
+@keyframes spin {
+
+	0% { transform: rotate(0deg); }
+
+	100% { transform: rotate(360deg); }
+
+}
+
+
+.home-intro, .page-header {
+	background-color: #ededed;
+	background-image: url('../images/pattern.png');
+}
+i.car-yello-icon {
+	padding: 11px;
+	background: #ffbf02;
+	color: #fff;	
+	margin-right: 10px;
+	-webkit-animation: rotateY 2000ms infinite ease-in-out;
+  	animation: rotateY 2000ms infinite ease-in-out;
+}
+@-webkit-keyframes rotateY {
+  to { -webkit-transform: rotateY(360deg); }
+}
+@keyframes rotateY {
+  to { transform: rotateY(360deg); }
+}
+i.car-yello-icon.no-anim {
+	animation: none;
+}
+
+
+
+/*COMMON STYLES END*/
+
+/*COVER WRAPPER ********************************/
+
+.cover-wraper {
+	background: url('../images/cover-bg.jpg') no-repeat center/cover;
+	height: 100%;
+	min-height: 100%;   
+	position: relative; 
+}
+
+.pages-header {
+	background: none;
+	height: auto;
+	min-height: auto;
+}
+.pages-header > .header-section {
+	background: none;
+	min-height: 117px;
+}
+
+/*HEADER SECTION*/
+.header-section {
+	background: url('../images/header-bg.png') repeat-x;		
+	min-height: 156px;
+}
+
+.header-section img {
+	margin-top: 30px;
+}
+
+.top-login {
+	display: table;
+	float: right;
+	margin-top: 13px;
+}
+.authenti, .tele {
+	display: table-cell;
+	text-transform: uppercase;
+}
+
+.top-login .authenti {
+	padding-right: 30px;
+}
+.top-login .authenti a {
+	color: #555555;
+}
+
+.top-login .tele {
+	background: #f3da8e;	
+	border-radius: 6px;
+	height: 30px;
+	padding-left: 6px;
+	transition: all 150ms ease-in;
+}
+.top-login .tele:hover {
+	transform: scale(1.01);
+	box-shadow: 0 0 13px #999;
+}
+.top-login .tele i {
+	font-size: 23px;
+	vertical-align: middle;
+}
+.top-login .tele a {
+	display: inline-block;
+	color: #2d3034;
+	background: #ffc108;
+	border-radius: 0 6px 6px 0;
+	padding: 5px 18px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+/*HEADER SECTION END*/
+
+/*GET QUOTE SECTION*/
+.get-qt {
+	position: absolute;
+	bottom: 15%;
+	width: 100%;
+}
+#get-qt-form {
+	background: #eee;
+	display: inline-block;
+	background-color: rgba(221,221,221,0.85);
+	padding: 12px 15px;
+	border-radius: 6px;
+}
+#get-qt-form label {
+	display: block;
+	text-align: left;
+	color: #777777;
+	font-size: 17px;
+	font-weight: 600;
+}
+#get-qt-form select,#get-qt-form button {
+	height: auto;
+	padding: 17px 11px;
+	border-radius: 0;
+}
+#get-qt-form select {	
+	border: #dddddd;
+	width: 376px;	
+	color: #999999;
+	padding-right: 33px;
+	font-size: 17px;	
+	font-weight: 400;
+}
+
+#get-qt-form .form-group {
+	position: relative;
+}
+#get-qt-form select + i {
+	position: absolute;
+	bottom: 20px;
+    right: 15px;
+    color: #999999;
+}
+#get-qt-form button {
+	width: 153px;
+	background-color: #ffc000;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+/*GET QUOTE SECTION END*/
+
+/*COVER WRAPPER END ***************************/
+
+/*MIDDLE CONTENT ******************************/
+
+h1 {
+	text-transform: uppercase;
+	color: #716d6e;
+	margin: 36px 0;
+}
+
+/*home intro section*/
+.home-intro {
+	padding: 25px;
+	margin-bottom: 56px;
+}
+.home-intro h3 {	
+	color: #716d6e;
+	font-weight: 600;
+}
+.home-intro p {
+	color: #716d6e;
+	margin-top: 30px;
+	font-size: 15px;	
+}
+
+/*MIDDLE CONTENT END **************************/
+
+/*FOOTER **************************************/
+/*footer top*/
+.footer-top {
+	background: #61625d;	
+	padding: 39px 0;
+}
+footer h4 {
+	text-transform: uppercase;
+	color: #fff;
+	margin-bottom: 5px;
+}
+footer a, footer p {
+	color: #fff;
+	font-size: 16px;
+}
+
+footer .middle-phone img {
+	display: inline-block;
+}
+img.app-store {
+	position: absolute;
+	bottom: 43%;
+    left: 38%;
+}
+img.gplay {
+	position: absolute;
+    bottom: 31%;
+    left: 38%;
+}
+footer .middle-phone h4 {	
+	margin: 25px 0 0 20px;
+}
+
+footer .footer-right-col {
+	text-align: right;
+}
+footer .footer-blk {
+	margin-top: 25px;
+	display: inline-block;
+}
+.footer-lft, .footer-rgt {
+	display: inline-block;
+}
+footer .footer-blk img {
+	display: inline-block;
+	margin-top: -30px;
+	margin-left: 10px;
+}
+footer .footer-blk img.paypal {
+	margin: 7px 0 35px 0;
+}
+
+/*footer bottom*/
+.footer-bottom {
+	background: #5b5c57;
+	padding: 25px 0;
+}
+ul.footer-socail li {
+	float: left;
+	padding: 0 15px;
+}
+.footer-bottom p, .footer-bottom a {
+	font-size: 15px;
+}
+/*FOOTER END **********************************/
+
+
+
+/* ---------------------------------------------- */
+
+/*  PAGES STYLEING GOES HERE  */
+
+/* ---------------------------------------------- */
+
+
+/*+++++++++ Booking Page ++++++++++++++*/
+
+/*HEADER CONTENT*/
+.page-header {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+/*HEADER CONTENT END*/
+
+/*PAGE CONTENT*/
+
+.page-content {
+	background: url('../images/pattern-2.png');
+	padding-bottom: 56px;
+}
+
+
+/*left side dashbord*/
+
+.give-padding-map-page {
+	padding-left: 6.7%;
+}
+
+.lft-dashbord {
+	position: relative;
+}
+.lft-dashbord h2 {
+	margin-top: 46px;
+    text-transform: uppercase;
+    color: #ffbf02;
+    font-size: 36px;
+    z-index: 9999;
+    width: 527px;
+    margin-right: -18.5%;
+    float: right;
+    position: relative;
+}
+.jumped-content {
+	/* z-index: 9999; */
+    width: 527px;    
+    /* margin-right: -18.5%; */
+    float: right;
+    position: relative;
+}
+.booking-input-block {
+	padding: 26px 20px;
+	background: #fff;
+	box-shadow: 0px -5px 0px #fff, 0px -1px 0px #fff, 3px 0px 20px #ddd, -3px 0px 20px #ddd;
+	margin-top: 38px;
+}
+.select-car-box {
+	
+}
+.booking-input-block .bib-common {
+	display: table;
+	width: 100%;
+	margin-top: 26px;
+}
+.booking-input-block .bib-common.withnotes {
+	margin-top: 0;
+}
+.booking-input-block .bib-common:first-child {
+	margin-top: 0;
+}
+.booking-input-block label {
+	display: table-cell;
+	background: #efe9e9;
+	color: #716d6e;
+	text-transform: uppercase;
+	padding: 14px;
+	width: 23%;
+}
+.booking-input-block .bib-common.bib-common-last label {
+	width: 41%;
+}
+.booking-input-block label i {
+	margin-right: 5px;
+}
+.booking-input-block select, .booking-input-block input, .booking-input-block .bib-common.withnotes > textarea {
+	display: table-cell;
+	width: 100%;
+	padding: 12px;
+	color: #ffc108;
+	margin-left: -5px;
+	font-size: 15px;
+	border: 2px solid #efe9e9;
+}
+.booking-input-block .bib-common.withnotes > textarea {
+	width: 99%;
+	margin: 0;
+}
+.bib-common .note-btn {
+	text-transform: uppercase;
+	border-radius: 0;
+}
+
+.booking-input-block h3.box-title {
+	color: #8b8989;
+	text-transform: uppercase;
+	display: inline-block;
+	margin-left: 96px;
+	margin-bottom: 36px;
+	padding-bottom: 16px;
+	border-bottom: 2px solid #efe9e9;
+}
+.booking-input-block.select-car {
+	position: relative;
+}
+
+/*Car selection Boxes*/
+.car-wrapper {
+	background: url('../images/pattern-3.png');
+	position: relative;
+	width: 527px;
+	margin-left: -4%;
+	z-index: 99999;
+}
+.car-wrapper .car-blk {
+	border-left: 11px solid #ffbf02;
+	background-color: rgba(255, 191, 2, 0.1);
+	margin-bottom: 36px;
+	position: relative;
+	padding: 15px 0;
+	transition: all 200ms ease-in-out;	
+}
+.car-wrapper .car-blk:hover {
+	transform: scale(1.015);
+	box-shadow: 0 0 26px #ddd;
+}
+.car-wrapper .car-blk:last-child {
+	margin-bottom: 0;
+}
+.car-wrapper .car-blk img {
+	width: 45%;
+    margin-left: 10%;
+}
+
+.car-wrapper .car-blk .car-price-blk {
+	position: absolute;
+    right: 0;
+    top: 0;
+    background: #ffbf02;
+    padding: 17px 25px 3px 25px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+}
+.car-blk .car-price-blk p {
+	color: #4f4f4d;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.car-blk .car-price-blk p.car-type {
+	font-size: 20px;
+}
+.car-blk .car-price-blk p.car-price {
+	font-size: 36px;
+}
+
+/*Passenger Box*/
+.booking-input-block .blk-car-pattern {
+	background: url('../images/pattern-3.png');
+}
+.booking-input-block .blk-car-pattern h5 {
+	color: #4f4f4d;
+	text-align: center;
+	text-transform: uppercase;
+}
+.booking-input-block .blk-car-pattern h5 span a {
+	color: #ffbf02;
+}
+
+/*select-payment-method*/
+.select-payment-method {
+	text-align: center;
+	margin: -20px 0 0 0;
+}
+button.cash, button.paypal, button.card {
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 0;
+	padding: 7px 40px;
+	border: none;
+}
+button.cash, button.paypal {	
+	color: #3c3c39;
+	background-color: #ffbf02;	
+}
+button.card {
+	color: #fff;
+	background-color: #d7a40b;
+}
+.booking-input-block .blk-car-pattern h5.payment-det-h5 {
+	margin-top: 26px;
+}
+
+
+
+
+/*Right map section*/
+
+.map-block {
+	height: 100%; /*600px*/
+}
+.mobile-promocode {
+	display: none;
+}
+
+.fxd-blk {
+	margin-top: -1px;
+}
+.fxd-blk > .row > .col-md-9 {
+	width: 71.7%;
+}
+.fxd-blk > .row > .col-md-3 {
+	width: 28.3%;
+}
+.fixed-price-block {
+	position: absolute;
+    top: 0;
+    width: 300px;
+    float: right;    
+    z-index: 9999;  
+}
+.fixed-price-block.f {
+	position: fixed;
+	top: 0;
+}
+
+
+
+.top-blk {
+	background: #ffbf02;
+	padding: 17px 15px;
+}
+.top-blk label {
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 13px;
+	margin-bottom: 0;
+}
+.top-blk p {
+	text-transform: uppercase;
+}
+
+
+.middle-blk {
+	background: #ededed;
+	padding: 17px;
+}
+.middle-blk .cat-blk {
+	display: table;
+	width: 100%;
+	margin-left: 10px;
+}
+.middle-blk .cat-blk .cat-bubble {
+	display: table-cell;
+	width: 15%;
+	border-left: 1px solid #feda00;
+}
+.middle-blk .cat-blk.uncheck .cat-bubble {
+	border-left: 1px solid #979797;
+}
+.middle-blk .cat-blk.uncheck .cat-bubble.last {
+	border-left: none;
+}
+.cat-blk .cat-bubble img {
+	position: absolute;
+	left: 16px;
+}
+.cat-blk .cat-bubble span {
+	height: 100%;
+	width: 5px;
+	background: red;
+}
+.middle-blk .cat-blk .cat-content {
+	display: table-cell;
+	width: 85%;
+	color: #969696;
+}
+.cat-blk .cat-content label {	
+	text-transform: uppercase;
+	margin-bottom: 0;
+	font-size: 12px;
+}
+.cat-blk .cat-content label.second-label {
+	margin-top: 10px;
+}
+.cat-blk .cat-content p.second-p {
+	margin-bottom: 15px;
+}
+
+input.add-promo-btn, .book-now-btn {
+	width: 100%;
+    border: none;
+    background: #ffbf02;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.price-blk {
+	background: #ededed;
+	padding: 10px;
+	border-top: 1px solid #464646;
+	text-align: center;
+}
+.price-blk span.price {
+	font-size: 43px;
+	padding: 10px 0;
+}
+.book-now-btn {
+	padding: 0;
+	height: 60px;
+}
+
+/*PAGE CONTENT END*/
+
+
+
+
+
+
+
+
+/*********************************************************************/
+
+/******************** RESPONSIVE STYLING *****************************/
+
+/*********************************************************************/
+
+
+@media screen and (min-width: 1200px) {
+
+	.container-fluid {
+		padding-right: 0;
+	}
+	.row.table-row {
+		display: table;
+		width: 100%;
+	}
+	.row.table-row > .table-col {
+		display: table-cell;
+		float: none;
+	}
+
+	.map-block {
+	    height: 100%; /*600px*/
+	    position: absolute;
+	    width: 100%;
+	}
+
+	#scroling-img.f {
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+	#scroling-img.ab {
+		position: absolute;
+		bottom: 0;	
+		width: 100%;
+	}
+	.map-block > iframe {
+		width: 100% !important;
+    	height: 100% !important; /*600px*/
+	}
+
+	.close-btn-popup {
+		display: none;
+	}
+
+}
+
+/* iPad Landscape */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+
+/*COVER WRAPPER ********************************/
+
+	/*get quote section*/
+	#get-qt-form select {
+		width: 370px;
+	}
+	/*get quote section end */
+
+	/*COVER WRAPPER END ****************************/
+
+	/*FOOTER **************/
+	img.app-store, img.gplay {
+		left: 35%;
+	}
+	
+
+	/*++++  INNER PAGE  +++++++++++++++++++++*/
+
+	/*Left Section*/
+	.give-padding-map-page {
+		padding-left: 0%;
+	}
+	.lft-dashbord h2 {
+		font-size: 29px;
+		margin-right: 40px;
+		width: auto;
+	}
+	.jumped-content {
+		width: 420px;
+		float: left;
+		margin-left: 10%;
+	}
+	.booking-input-block label {
+		width: 30%
+	}
+	.booking-input-block .bib-common.bib-common-last label {
+		width: 49%;
+		font-size: 13px;
+	}
+	.booking-input-block h3.box-title {
+		margin-left: 50px;
+	}
+	.car-wrapper .car-blk img {
+		width: 30%;
+    	margin-left: 17%;
+	}
+	.car-wrapper {
+		width: 421px;
+    	margin-left: -21px;
+	}
+	.car-blk .car-price-blk p.car-type {
+		font-size: 16px;
+	}
+	.car-blk .car-price-blk p.car-price {
+		font-size: 25px;
+	}
+	.car-wrapper .car-blk .car-price-blk {
+		padding: 11px 25px 9px 25px;
+	}
+
+	/*Right map section*/
+
+	.fxd-blk {
+		margin-top: -1px;
+	}
+	.fxd-blk > .row > .col-md-9 {
+		width: 67%;
+	}
+	.fxd-blk > .row > .col-md-3 {
+		width: 33%;
+	}
+
+	.container-fluid {
+		padding-right: 0;
+	}
+	.row.table-row {
+		display: table;
+		width: 100%;
+	}
+	.row.table-row > .table-col {
+		display: table-cell;
+		float: none;
+	}
+
+	.map-block {
+	    height: 100%; /*600px*/
+	    position: absolute;
+	    width: 100%;
+	}
+
+	#scroling-img.f {
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+	#scroling-img.ab {
+		position: absolute;
+		bottom: 0;	
+		width: 100%;
+	}
+	.map-block > iframe {
+		width: 100% !important;
+    	height: 100% !important; /*600px*/
+	}
+
+}
+
+
+
+/* iPad Portrait */
+
+@media screen and (max-width: 768px) {
+
+	/*get quote section*/
+	#get-qt-form select {
+		width: 260px;
+	}
+	/*get quote section end */
+
+	/*FOOTER*/
+	footer .footer-right-col {
+		text-align: left;
+		margin-top: 30px;
+	}
+
+	.footer-bottom p {
+		font-size: 13px;
+	}
+	/*FOOTER END */
+
+
+	/*++++  INNER PAGE  +++++++++++++++++++++*/
+
+	/*Left Section*/
+
+	.fxd-blk {display: none;}
+	.give-padding-map-page {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.lft-dashbord h2 {
+		font-size: 29px;
+	    margin-left: 33%;
+	    width: auto;
+	    float: left;
+	}
+	.jumped-content {
+		width: 100%;
+		margin: 0 auto;
+		float: left;
+		padding-bottom: 30px;
+	}
+	.car-wrapper {
+		width: 106%;
+    	margin-left: -3%;
+	}
+	.booking-input-block h3.box-title {
+		margin-left: 205px;
+	}
+	.rmv-padding-left-ipd {
+		padding-left: 0;
+	}
+
+	.fixed-price-block.f {
+		position: fixed;
+		top: 0;
+	}
+	.map-block, #scroling-img.f {
+		position: absolute;
+	    top: 62px;
+	    left: 0;
+	    width: 100%;
+	}
+	.map-block {
+		height: 600px;
+	}
+	#scroling-img.ab {
+		position: absolute;
+		bottom: 0;	
+	}
+	.jumped-content {
+		margin-top: 86%;
+	}
+
+	#mobile-promocode {
+		display: block;
+	    position: absolute;
+	    top: 20px;
+	    left: 0;
+	    text-align: center;
+	    width: 100%;
+	    line-height: 40px;
+	    background: #ffbf02;
+	    border: 1px dashed #d6a71d;
+	    text-transform: uppercase;
+	}
+	.promocode-blk-view {
+		display: block;
+	}
+
+	/*mobile view promocode poupup*/
+	.fixed-price-block {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9999999;
+		width: 100%;
+		height: 100%;
+    	background: rgba(0, 0, 0, 0.5);
+	}
+
+	.rw-tbl {
+		display: table;
+		width: 100%;
+	}
+	.rw-col {
+		display: table-cell;
+		width: 50%;
+	}
+	.close-btn-popup {
+		display: block;
+	    width: 100%;
+	    margin-top: 10px;
+	    padding: 10px 0;
+	    background: #b1870b;
+	    color: #fff;
+	    font-weight: 600;
+	    text-transform: uppercase;
+	}
+
+}
+
+/* iPhone 6+ */
+
+@media screen and (max-width: 480px) {
+
+	h1 {
+		font-size: 24px;
+	}
+
+	/*COVER WRAPPER ********************************/
+
+	/*header section*/
+	.header-section img {
+		margin: 30px auto 0 auto;
+	}
+	.top-login {
+		margin: 30px auto 0 auto;
+		float: none;
+	}
+	/*header section end */	
+
+	/*get quote section*/
+	.get-qt {
+		bottom: 15px;
+	}
+	#get-qt-form select {
+		width: 100%;
+	}
+	#get-qt-form {
+		width: 100%;
+	}
+
+	/*get quote section end */
+
+	/*COVER WRAPPER END ****************************/
+
+	/*FOOTER*/
+	ul.footer-link-list {
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	ul.footer-socail {
+		display: inline-block;
+	}
+	.footer-bottom p {
+		text-align: center;
+	}
+	/*FOOTER END */
+
+
+	/*++++  INNER PAGE  +++++++++++++++++++++*/
+
+	.page-header {
+		margin-top: 30px;
+	}
+	/*Left Section*/
+
+	.give-padding-map-page {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.lft-dashbord h2 {
+		font-size: 20px;
+		margin-left: 27%;
+	}
+	.booking-input-block label, .booking-input-block select, .booking-input-block input {
+		font-size: 12px;
+	}
+	.booking-input-block label {
+		width: 30%;
+	}
+	.booking-input-block .bib-common.bib-common-last label, #bd-crd-holder {
+		width: 49%;
+	}
+	button.cash, button.paypal, button.card {
+		padding: 7px 36px;
+	}
+	.car-blk .car-price-blk p.car-price {
+		font-size: 27px;
+	}
+	.car-wrapper {
+		width: 111.4%;
+    	margin-left: -5.8%;
+	}
+	.booking-input-block h3.box-title {
+		margin-left: 0;
+	    font-size: 23px;
+	    width: 100%;
+	}
+
+
+	.fixed-price-block.f {
+		position: fixed;
+		top: 0;
+	}
+	.map-block, #scroling-img.f {
+		position: absolute;
+	    top: 62px;
+	    left: 0;
+	}
+	#scroling-img.ab {
+		position: absolute;
+		bottom: 0;	
+	}
+	.jumped-content {
+		margin-top: 355px;
+	}
+
+}
+
+
+
+/* iPhone 6 */
+
+@media screen and (max-width: 380px) {
+
+	/*++++  INNER PAGE  +++++++++++++++++++++*/
+
+	h1 {
+		font-size: 21px;
+	}
+
+	/*Left Section*/
+
+	.booking-input-block label {
+		padding: 8px;
+	}
+	.booking-input-block .bib-common.bib-common-last label {
+		width: 46%;
+	}
+	#bd-crd-holder {
+		width: 49%;
+	}
+	.booking-input-block label {
+		font-size: 11px;
+	}	
+	button.cash, button.paypal, button.card {
+		padding: 7px 31px;
+	}
+	.car-wrapper {
+		width: 112.5%;
+    	margin-left: -6.3%;
+	}
+	.car-blk .car-price-blk p.car-type {
+		font-size: 16px;
+	}
+
+	.jumped-content {
+		margin-top: 330px;
+	}
+
+}
+
+
+
+
+/* iPhone 5 */
+
+@media screen and (max-width: 320px) {
+
+	/*COVER WRAPPER ********************************/
+
+	/*header section*/
+	.top-login .authenti {
+		padding-right: 17px;
+	}
+	.top-login .tele a, .top-login .authenti a {
+		font-size: 14px;
+	}
+	/*header section end */
+
+	/*COVER WRAPPER END ****************************/
+
+	/*++++  INNER PAGE  +++++++++++++++++++++*/
+
+	h1 {
+		font-size: 18px;
+	}
+
+	/*Left Section*/
+
+	.booking-input-block label {
+		width: 35%;
+	}
+	.booking-input-block .bib-common.bib-common-last label {
+		width: 55%;
+	}
+	#bd-crd-holder {
+		width: 58%;
+	}
+	button.cash, button.paypal, button.card {
+		padding: 10px 21px;
+	}
+	.booking-input-block h3.box-title {
+		margin-left: 9px;
+    	font-size: 19px;	
+	}
+	.car-blk .car-price-blk p.car-type {
+		font-size: 14px;
+	}
+	.car-blk .car-price-blk p.car-price {
+		font-size: 21px;
+	}
+	.car-wrapper {
+		width: 115.1%;
+    	margin-left: -7.6%;
+	}
+
+	.jumped-content {
+		margin-top: 270px;
+	}
+
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AgentBookingAvailabilityRequest>
+      
+	<Agent Id="300999">
+      <Password>jEHjE5Kv</Password>
+      <Reference></Reference>
+      <Time>2016-12-12T15:04:57.123Z</Time>
+   </Agent>
+   <Vendor Id="700999" />
+   
+
+   <BookingParameters>
+      <Source></Source>
+      <BookingTime>1970-01-01T00:00:00+00:00</BookingTime>
+      <Pricing>
+           <Currency></Currency>
+         <PaymentType></PaymentType>
+      </Pricing>
+      <Journey>
+         <From>
+            <Type>Address</Type>
+            <Data></Data>
+            <Coordinate>
+               <Latitude></Latitude>
+               <Longitude></Longitude>
+            </Coordinate>
+         </From>
+         <To>	 
+            <Type>Address</Type>
+            <Data></Data>
+            <Coordinate>
+               <Latitude></Latitude>
+               <Longitude></Longitude>
+            </Coordinate>
+         </To>
+      </Journey>
+      <Ride Type="Passenger">
+         <Count></Count>
+         <Luggage></Luggage>
+         <Facilities></Facilities>
+         <DriverType></DriverType>
+         <VehicleType>Saloon</VehicleType>
+      </Ride>
+   </BookingParameters>
+</AgentBookingAvailabilityRequest>
