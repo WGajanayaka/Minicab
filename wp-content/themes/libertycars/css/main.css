@@ -10,6 +10,11 @@ p,h1,h2,h3,h4,h5,ul {
 	padding: 0;
 	margin: 0;
 }
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	color: #716d6e;
+}
 ul {
 	list-style-type: none; 
 }
@@ -20,14 +25,31 @@ a:hover {
 select, textarea {
 	font-family: 'Roboto', sans-serif;
 }
-button, select:focus {
+textarea,button, select:focus {
 	outline:0px !important;
     -webkit-appearance:none;
     border: none;
 }
-input:focus {
+textarea:focus,input:focus {
 	outline:0px !important;
     -webkit-appearance:none;    
+}
+ol + p {
+    margin-left: 40px;
+}
+ol li {
+	font-size: 15px;
+}
+
+/*Button styles*/
+input[type="submit"],input[type="button"],button {
+	background: #ffbf02;
+    color: #fff;
+    border: 0 !important;
+    text-transform: uppercase !important;
+    font-size: 15px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
 }
 
 .border-left {
@@ -51,8 +73,8 @@ select::-ms-expand {
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 400px;
-        width: 400px;
+        height: 600px;
+        width: 100%;
       }
   
  /*Validations */
@@ -269,7 +291,7 @@ i.car-yello-icon.no-anim {
 /*GET QUOTE SECTION*/
 .get-qt {
 	position: absolute;
-	bottom: 15%;
+	top: 55%;/*bottom: 35%;*/
 	width: 100%;
 }
 #get-qt-form {
@@ -283,29 +305,34 @@ i.car-yello-icon.no-anim {
 	display: block;
 	text-align: left;
 	color: #777777;
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 600;
 }
-#get-qt-form select,#get-qt-form button {
+#get-qt-form input,#get-qt-form button {
 	height: auto;
-	padding: 17px 11px;
+	padding: 11px;
 	border-radius: 0;
 }
-#get-qt-form select {	
+#get-qt-form input {	
 	border: #dddddd;
-	width: 376px;	
+	width: 350px !important;	
 	color: #999999;
 	padding-right: 33px;
-	font-size: 17px;	
+	font-size: 15px;	
 	font-weight: 400;
+}
+
+#get-qt-form .tourday {
+	width: 185px !important;
+	position: relative;
 }
 
 #get-qt-form .form-group {
 	position: relative;
 }
-#get-qt-form select + i {
+#get-qt-form input.give-icon + i {
 	position: absolute;
-	bottom: 20px;
+	bottom: 15px;
     right: 15px;
     color: #999999;
 }
@@ -315,6 +342,26 @@ i.car-yello-icon.no-anim {
 	color: #fff;
 	font-size: 17px;
 	font-weight: 600;
+}
+
+/*Hidden Flight Number input*/
+.bib-common input#cabs_BookingFlight {
+	width: 32.7% !important;
+    padding: 6px;
+    float: right;
+    border-radius: 3px;
+    font-size: 13px;
+    margin-top: 9px;
+}
+.bib-common.flight-num {
+	position: relative;
+}
+input#cabs_BookingFlight:after{
+	content: 'ok';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 /*GET QUOTE SECTION END*/
@@ -460,9 +507,9 @@ ul.footer-socail li {
     position: relative;
 }
 .jumped-content {
-	/* z-index: 9999; */
+	 z-index: 9999; 
     width: 527px;    
-    /* margin-right: -18.5%; */
+     margin-right: -18.5%; 
     float: right;
     position: relative;
 }
@@ -480,6 +527,32 @@ ul.footer-socail li {
 	width: 100%;
 	margin-top: 26px;
 }
+ /*Terms & condition section*/
+ .booking-input-block .bib-common.bib-terms {
+ 	display: block;
+    text-align: center;
+    background: #ffbf02;
+    padding: 20px;
+    color: #3c3c39;
+    font-weight: 600;
+    font-size: 15px;
+ }
+
+  .booking-input-block .bib-common.bib-terms input {
+  	display: inline-block;
+    margin: -1px 8px 0px 0;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+  }
+  .booking-input-block .bib-common.bib-terms input:focus {
+  	-webkit-appearance: checkbox !important;
+  }
+
+  .booking-input-block .bib-common.bib-terms a {
+  	color: #3c3c39;
+  }
+
 .booking-input-block .bib-common.withnotes {
 	margin-top: 0;
 }
@@ -493,6 +566,8 @@ ul.footer-socail li {
 	text-transform: uppercase;
 	padding: 14px;
 	width: 23%;
+	vertical-align: middle;
+	font-size: 13px;
 }
 .booking-input-block .bib-common.bib-common-last label {
 	width: 41%;
@@ -504,7 +579,7 @@ ul.footer-socail li {
 	display: table-cell;
 	width: 100%;
 	padding: 12px;
-	color: #ffc108;
+	color: #716d6e;
 	margin-left: -5px;
 	font-size: 15px;
 	border: 2px solid #efe9e9;
@@ -517,6 +592,28 @@ ul.footer-socail li {
 	text-transform: uppercase;
 	border-radius: 0;
 }
+
+/*Special Requiments section*/
+label.special-label {
+	width: 40%;
+}
+label.special-label i {
+	display: table-cell;
+    padding-top: 5px;
+}
+span.special-span {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 8px;
+}
+textarea#cabs_DriverNote {
+	width: 100%;
+	vertical-align: middle;
+	color: #716d6e;
+    font-size: 15px;
+    border: 2px solid #efe9e9;
+}
+
 
 .booking-input-block h3.box-title {
 	color: #8b8989;
@@ -616,6 +713,18 @@ button.card {
 }
 .booking-input-block .blk-car-pattern h5.payment-det-h5 {
 	margin-top: 26px;
+}
+.payment-det {
+	margin-top: 30px;
+	text-align: center;
+}
+.payment-det a {
+	color: #8b8989;	
+	font-size: 15px;
+	font-weight: 600;
+}
+.payment-det a:hover {
+	color: #a5a2a2;
 }
 
 
@@ -741,7 +850,27 @@ input.add-promo-btn, .book-now-btn {
 
 /*PAGE CONTENT END*/
 
+/*CANCEL PAGE*/
 
+/*wrapper middle align*/
+.booking-input-block {
+	margin: 50px auto !important;
+}
+.basic-form {
+	width: 50%;
+}
+.booking-input-block.basic-form input {
+	margin-left: 0;
+}
+.booking-input-block.basic-form input[type="submit"] {
+	color: #fff;
+	margin-top: 15px;
+}
+
+/*default page*/
+.entry-content {
+	padding-top: 56px;
+}
 
 
 
@@ -761,19 +890,22 @@ input.add-promo-btn, .book-now-btn {
 		padding-right: 0;
 	}
 	.row.table-row {
-		display: table;
+		/*display: table;
+		width: 100%;*/
 		width: 100%;
+	    padding: 0;
+	    margin: 0;
 	}
 	.row.table-row > .table-col {
-		display: table-cell;
-		float: none;
+		/*display: table-cell;
+		float: none;*/
 	}
 
-	.map-block {
-	    height: 100%; /*600px*/
+	/*.map-block {
+	    height: 100%;
 	    position: absolute;
 	    width: 100%;
-	}
+	}*/
 
 	#scroling-img.f {
 		position: fixed;
@@ -804,6 +936,16 @@ input.add-promo-btn, .book-now-btn {
 	/*get quote section*/
 	#get-qt-form select {
 		width: 370px;
+	}
+	#get-qt-form input {
+		width: 450px !important;
+	}
+	.bib-common input#cabs_BookingFlight {
+		float: left;
+	    margin-top: -58px;
+	    width: 30.2% !important;
+	    margin-left: 4px;
+	    padding: 17px;
 	}
 	/*get quote section end */
 
@@ -915,6 +1057,16 @@ input.add-promo-btn, .book-now-btn {
 	/*get quote section*/
 	#get-qt-form select {
 		width: 260px;
+	}
+
+	/*get quote form*/
+	#get-qt-form input {
+		width: 236px !important;
+	}
+	.bib-common input#cabs_BookingFlight {
+		width: 36.3% !important;
+		margin-right: 12px;
+    	margin-top: -54px;
 	}
 	/*get quote section end */
 
@@ -1053,13 +1205,24 @@ input.add-promo-btn, .book-now-btn {
 
 	/*get quote section*/
 	.get-qt {
-		bottom: 15px;
+		top: 40%
 	}
 	#get-qt-form select {
 		width: 100%;
 	}
 	#get-qt-form {
 		width: 100%;
+	}
+	#get-qt-form input {
+		width: 100% !important;
+	}
+	.bib-common input#cabs_BookingFlight {
+		width: 100% !important;
+	    /* margin-right: 12px; */
+	    margin-top: -110px;
+	    font-size: 15px;
+	    /* margin-bottom: 14px; */
+	    padding: 7px;
 	}
 
 	/*get quote section end */
@@ -1135,7 +1298,12 @@ input.add-promo-btn, .book-now-btn {
 		bottom: 0;	
 	}
 	.jumped-content {
-		margin-top: 355px;
+		margin-top: 470px;
+	}
+
+	/*Map*/
+	#map {
+		height: 400px;
 	}
 
 }
@@ -1178,7 +1346,7 @@ input.add-promo-btn, .book-now-btn {
 	}
 
 	.jumped-content {
-		margin-top: 330px;
+		margin-top: 470px;
 	}
 
 }
@@ -1239,7 +1407,7 @@ input.add-promo-btn, .book-now-btn {
 	}
 
 	.jumped-content {
-		margin-top: 270px;
+		margin-top: 470px;
 	}
 
 }

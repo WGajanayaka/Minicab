@@ -73,46 +73,28 @@ $(document).ready(function(){
 });
 
 
-/*
-$(window).scroll(function() {
-    var offset = $("#price-blk-scanner").offset().top; 
-    var offsenew = $("#fxd-blk-f-remove").offset().top - 517;
-    var mapMargin = $("#fxd-blk-f-remove").offset().top - 830;    
 
-    if ($(window).scrollTop() > offset) {
-        $('#add-f-class').addClass('f');
-        $('#scroling-img').addClass('f');
-    } else {
-    	$('#add-f-class').removeClass('f');
-    	$('#scroling-img').removeClass('f').removeClass('ab');
-    }
+// $(window).scroll(function() {
+//     var offset = $("#price-blk-scanner").offset().top; 
+//     var mapMargin = $("#fxd-blk-f-remove").offset().top;    
 
-    if ($(window).scrollTop() > offsenew) {
-    	$('#add-f-class').addClass('animated').hide();
+//     if ($(window).scrollTop() > offset) {
+//         $('#scroling-img').addClass('f');
+//     } else {
+//     	$('#scroling-img').removeClass('f').removeClass('ab');
+//     }
 
-    } else if(offset > $(window).scrollTop() ) {
-    	$('#add-f-class').removeClass('animated');
+//     if ($(window).scrollTop() > mapMargin) {    	
+//     	$('#scroling-img').addClass('ab').removeClass('f');
 
-    } else if( $(window).scrollTop() <= offsenew) {
-    	$('#add-f-class').show().addClass('bounceInDown');
+//     } else if(offset > $(window).scrollTop() ) {    	
+//     	$('#scroling-img').removeClass('animated');
 
-    } else if(offset < $(window).scrollTop() < offsenew) {
-    	$('#add-f-class').show().removeClass('bounceInDown');
-    } 
+//     } else if( $(window).scrollTop() <= mapMargin) {    	
+//     	$('#scroling-img').removeClass('ab');
 
-    if ($(window).scrollTop() > mapMargin) {    	
-    	$('#scroling-img').addClass('ab').removeClass('f');
-
-    } else if(offset > $(window).scrollTop() ) {    	
-    	$('#scroling-img').removeClass('animated');
-
-    } else if( $(window).scrollTop() <= mapMargin) {    	
-    	$('#scroling-img').removeClass('ab');
-
-    } else if(offset < $(window).scrollTop() < mapMargin) {    	
-    	$('#scroling-img').removeClass('ab').addClass('f');
-    } 
+//     } else if(offset < $(window).scrollTop() < mapMargin) {    	
+//     	$('#scroling-img').removeClass('ab').addClass('f');
+//     } 
     
-});
-
-*/
+// });

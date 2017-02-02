@@ -48,16 +48,6 @@ get_header(); ?>
                       'walker' => new wp_bootstrap_navwalker())
                   );
                   ?>
-                  <!-- <ul>
-                    <li class="active">
-                      <a href="<?php //echo esc_url( home_url( '/' ) ); ?>">home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a href="#">services</a></li>
-                    <li><a href="<?php //echo esc_url( home_url( '/' ) ); ?>book-now">book now</a></li>
-                    <li><a href="#">airport info</a></li>
-                    <li><a href="#">faqs</a></li>
-                    <li><a href="#">contact us</a></li>
-                  </ul> -->
                 </nav>                
 
                 <!-- Navigation End -->                
@@ -77,42 +67,46 @@ get_header(); ?>
               <div class="col-md-12 text-center">
  
                 <form id="get-qt-form" class="form-inline" method="POST" action="book-now/">
-                  <div class="form-group">
-                    <label class="" for="pick-address">Pick up address</label>
- 					
-					  <input style="height:50px;width:200px;"  id="ac1" class="autocomplete" type="text" name="cabs_DataAddress1" value="" onfocusout="detect_names()"  >
-  					  <input type="hidden" id="ac1_lat" name="ac1_lat" value=""> 
-					  <input type="hidden" id="ac1_lng" name="ac1_lng" value=""> 
-                     
-                   </div>
-                  <div class="form-group">
-                    <label class="" for="drop-address">Drop off address</label>   
-					
-					<input style="height:50px;width:200px;"  id="ac2" class="autocomplete" type="text" name="cabs_DataAddress2" value=""><br> 
-					  <input type="hidden" id="ac2_lat" name="ac2_lat" value=""> 
-					  <input type="hidden" id="ac2_lng" name="ac2_lng" value="">  
 
-                   </div>
-				  
+                  <div class="form-group">
+                    	<label class="" for="pick-address">Pick up address</label>
+
+ 		    	<input   id="ac1" class="autocomplete give-icon" type="text" name="cabs_DataAddress1" value="" placeholder="Airport, Station, Post Code e.g W1j 0DA">
+
+                        <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+  		    	             <input type="hidden" id="ac1_lat" name="ac1_lat" value=""> 
+		    	               <input type="hidden" id="ac1_lng" name="ac1_lng" value=""> 
+                  </div>
+
+                  <div class="form-group">
+                  	   <label class="" for="drop-address">Drop off address</label>  
+
+    			<input  id="ac2" class="autocomplete give-icon" type="text" name="cabs_DataAddress2" value="" placeholder="Airport, Station, Post Code e.g W1j 0DA">
+
+                        <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                  			<input type="hidden" id="ac2_lat" name="ac2_lat" value=""> 
+                  			<input type="hidden" id="ac2_lng" name="ac2_lng" value="">  
+                   </div>	
+
+                  <div class="form-group">
+                    <label for="drop-address">Date & Time</label>
+                    <input type="text" class="tourday give-icon" name="cabs_BookingTime" value="">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                  </div>
+
                   <div class="form-group">
                     <label class="" for="exampleInputPassword3">&nbsp;</label>
-                    <button type="submit" class="btn btn-default">Get Quotes <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                    <button type="submit" class="btn btn-default">Get Quotes <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
                   </div>
-				  
-				  				   
-				  <div class="bib-common bib-common-last">
-                    <label for="pick-up"><i class="fa fa-calendar" aria-hidden="true"></i>date & time             <br>       <input type="text" class="tourday" name="cabs_BookingTime" value="">					<input type="text" id="cabs_BookingFlight" name="cabs_BookingFlight" value="" class="display-none">
 
-</label>
-                  </div> 
-				  
-				  
-				  
+                  <div class="bib-common bib-common-last flight-num">
+                    <input type="text" id="cabs_BookingFlight" name="cabs_BookingFlight" value="" class="display-none animated slideDown" placeholder="Enter your Flight Number">
+                    <!-- <i class="fa fa-plane" aria-hidden="true"></i> -->
+                  </div>
+
                 </form>            
-
               </div>
             </div>
-
         </div>
       </div>
       <!-- GET QUOTE END -->
@@ -141,8 +135,9 @@ get_header(); ?>
     </div>
 
     <!-- MIDDLE CONTENT END -->
-
     <script>
+	<?php /* Migrated to pcapredict.com from google map
+ 
 	//////////////////////////////gm	/////////////////////// 
 
 	var placeSearch, autocomplete,autocomplete2;
@@ -239,7 +234,7 @@ get_header(); ?>
 
 //initialize();
 
-	
+	*/ ?>
  
 	jQuery("#ac1").on('input',detect_names);
 	
@@ -260,17 +255,6 @@ get_header(); ?>
 
 	}
  
-
-
-	//////////////////////////////gm ends/////////////////////// 
-
-
-
     </script>
-	
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcyM3ukLxTuhgbvGg-4AnF4vjP208j5o0&libraries=places&callback=initialize"
-        async defer></script>
 <?php
-
 get_footer();

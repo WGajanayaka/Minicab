@@ -26,29 +26,20 @@
   border: none;
 }
 
-/*@media screen and (min-width: 40em) {
-
-  nav.nav-collapse {
-    margin-top: 27px;
-  }
-  .nav-collapse li {
-    width: 16%;
-    *width: 24.9%;
-    _width: 19%;
-  }
-}*/
-
 .nav-collapse a, .navbar-nav>li>a {  
   text-decoration: none;
   width: 100%;
   float: left;  
-
   color: #716d6e;
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
   padding: 0 17px;
   border-right: 1px solid #716d6e;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+  color: #949292;
+  background-color: transparent;
 }
 
 @media screen and (min-width: 40em) {

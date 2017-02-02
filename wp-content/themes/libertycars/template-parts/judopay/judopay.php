@@ -8,13 +8,14 @@ $logger->pushHandler(new Monolog\Handler\StreamHandler('app.log', Monolog\Logger
 $judopay = new \Judopay(
     array(
         'apiToken' => 'MgI5Wj9qcC5ofsTd',
-        'apiSecret' => '40c75aeb17d8e60a9bf0d3430e99475bae25b58080012f185fbe4be0c8d55960',
+        'apiSecret' => '40c75aeb17d8e60a9bf0d3430e99475bae25b58080012f185fbe4be0c8d55960 ',
         'judoId' => '1100747-435',
         //Set to true on production, defaults to false which is the sandbox
         'useProduction' => false,
 		'logger' => $logger
     )
 );
+
 
 $payment = $judopay->getModel('WebPayments\Payment');
 
@@ -26,7 +27,7 @@ $payment->setAttributeValues(
         'judoId' => '100747-435',   
         'yourConsumerReference' => $ConsumerReference,
         'yourPaymentReference' => $PaymentReference,
-        'amount' => 1, //$amount,
+        'amount' => $amount,
         'currency' => $currency,
         'clientIpAddress' => $_SERVER['REMOTE_ADDR'] ,
         'clientUserAgent' => $_SERVER['HTTP_USER_AGENT'],

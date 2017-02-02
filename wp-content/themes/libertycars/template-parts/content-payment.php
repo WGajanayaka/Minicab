@@ -31,10 +31,10 @@
 		</span>
 		<div id="response"></div>
 	</div>
-	<br>
-	<br>
- 	<a href="/liberty_cars/cancel-booking/" target="_blank"> Cancel booking  </a> | 
-     	<a href="/liberty_cars/booking-status/" target="_blank"> Booking Status </a> | 
+	<div class="payment-det">
+ 		<a href="/cancel-booking/" target="_blank"> Cancel booking  </a> &nbsp;|&nbsp; 
+     	<a href="/booking-status/" target="_blank"> Booking Status </a>
+     </div>
 </div>
 
 <script type="text/javascript">
@@ -42,7 +42,7 @@
 
 jQuery(function(){
 
-   var  ajaxurl = "/liberty_cars/wp-admin/admin-ajax.php";	
+   var  ajaxurl = "/wp-admin/admin-ajax.php";	
    	
    jQuery("#cach-payment-button").click(function()
    {

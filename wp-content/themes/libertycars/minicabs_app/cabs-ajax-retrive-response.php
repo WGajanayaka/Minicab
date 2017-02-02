@@ -74,12 +74,13 @@
 				add_post_meta($get_id,'cabs_DriverType', $cabs_DriverType);
 				add_post_meta($get_id,'cabs_VehicleType', $cabs_VehicleType);
 				add_post_meta($get_id,'cabs_veh_ref', $cabs_veh_ref);
-				add_post_meta($get_id,'bookingRequest', $string);
 
 				$to=$cabs_EmailAddress;
 				$subject = 'The test subject';
-				$imgUrl_LC_logo=wp_get_attachment_url(100);
-				
+
+				$headers[] = 'From: Liberty Cars <bookings@minicabsinlondon.com>';
+				$headers[] = 'Cc: Liberty Cars 2 <bookings@minicabsinlondon.com>';
+				 
 				//echo $string;
 
 				$message = '<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="580" style="width:435.0pt">
@@ -215,7 +216,7 @@ Trip billed on:<br>
 <tbody>
 <tr>
 <td style="background:#279b00;padding:7.5pt 3.75pt 7.5pt 7.5pt">
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:white">FARE: Â£'.$cabs_veh_p.'</span></b><u></u><u></u></p>
+<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:white">FARE: £'.$cabs_veh_p.'</span></b><u></u><u></u></p>
 </td>
 </tr>
 </tbody>
@@ -278,7 +279,7 @@ Trip billed on:<br>
 <p class="MsoNormal"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">FARE:</span></b><u></u><u></u></p>
 </td>
 <td width="109" style="width:81.75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="right" style="text-align:right"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">Â£'.$cabs_veh_p.'</span><u></u><u></u></p>
+<p class="MsoNormal" align="right" style="text-align:right"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">£'.$cabs_veh_p.'</span><u></u><u></u></p>
 </td>
 </tr>
 <tr style="height:30.0pt">
@@ -302,7 +303,7 @@ Trip billed on:<br>
 <p class="MsoNormal"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">TOTAL COST:</span></b><u></u><u></u></p>
 </td>
 <td width="109" style="width:81.75pt;border:none;border-top:solid #cccccc 1.0pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="right" style="text-align:right"><b><span style="font-family:&quot;Arial&quot;,sans-serif;color:#3165f3">Â£'.$cabs_veh_p.'</span></b><u></u><u></u></p>
+<p class="MsoNormal" align="right" style="text-align:right"><b><span style="font-family:&quot;Arial&quot;,sans-serif;color:#3165f3">£'.$cabs_veh_p.'</span></b><u></u><u></u></p>
 </td>
 </tr>
 </tbody>
@@ -342,7 +343,7 @@ $headers = array('Content-Type: text/html; charset=UTF-8','From: Liberty Cars <b
 				 
 				wp_mail( $to, $subject, $message, $headers );
 				
-				 // echo  $string ;
+				  //echo  $string ;
 			
 			}	
 		}		

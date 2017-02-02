@@ -1,13 +1,24 @@
 <?php
-$api_request='https://cxs-staging.autocab.net/api/agent';
-
 $theWebPaymentReference = $_POST['Reference'];
 $ReceiptId = $_POST['ReceiptId'];
 $CardToken = $_POST['CardToken'];
 
+/* Test Servre 
+$api_request='https://cxs-staging.autocab.net/api/agent';
 $AgentId=300999;
 $Password='jEHjE5Kv';
 $VendorId=700999;
+*/
+
+// Production Server 
+ $api_request='https://cxs.autocab.net/api/agent'
+ $AgentId=36344;
+ $Password='erwhxY8W';
+ $VendorId=76344;
+ 
+
+
+
 $Time = '2016-12-24T17:00:00+00:00';
  
 if($theWebPaymentReference!=null)
@@ -133,7 +144,7 @@ if($theWebPaymentReference!=null)
 							 </Notifications>
 						</AgentBookingAuthorizationRequest>';
 						
-		echo $AgentBookingAuthorizationRequest;
+		//echo $AgentBookingAuthorizationRequest;
 						
 		 $BookingResponse = wp_remote_post($api_request, array('method' => 'POST','timeout' => 45,'redirection' => 5,	'httpversion' => '1.0',	'blocking' => true,
 		 				'headers' => array('Content-type' => 'text/xml'),
@@ -151,289 +162,131 @@ if($theWebPaymentReference!=null)
 		
 		
 		//Save Payment Information  
-
-
 		
-		//Send Email. starts
-
-
-				$to=$cabs_EmailAddress;
-				$subject = 'The test subject';
-				$imgUrl_LC_logo=wp_get_attachment_url(100);
-
-				$message = '<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="580" style="width:435.0pt">
-<tbody>
-<tr>
-<td valign="top" style="padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="580" style="width:435.0pt">
-<tbody>
-<tr>
-<td valign="top" style="padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="580" style="width:435.0pt">
-<tbody>
-<tr>
-<td width="400" valign="top" style="width:300.0pt;padding:0cm 0cm 0cm 0cm">
-<p class="MsoNormal"><img width="360" height="150" id="m_6757093997842635877m_5944428788199314964_x0000_i1025" src="'.$imgUrl_LC_logo.'" class="CToWUd a6T" tabindex="0"><div class="a6S" dir="ltr" style="opacity: 0.01; left: 395.5px; top: 167px;"><div id=":uc" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V" data-tooltip="Download"><div class="aSK J-J5-Ji aYr"></div></div></div><u></u><u></u></p>
-</td>
-<td width="180" valign="top" style="width:135.0pt;padding:0cm 0cm 0cm 0cm">
-<p class="MsoNormal" align="right" style="text-align:right"><span style="font-size:9.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333"><span class="il">Invoice</span> number:<br>
-<b>V76344-A36344-13187261</b><br>
-<br>
-<span class="il">Invoice</span> issued on:<br>
-<b>'.$BookingTime.'</b><br>
-<br>
-Trip billed on:<br>
-<b>'.$BookingTime.'</b></span><u></u><u></u></p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td valign="top" style="border:none;border-bottom:solid #eaeaea 1.0pt;padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="580" style="width:435.0pt">
-<tbody>
-<tr>
-<td width="290" valign="top" style="width:217.5pt;padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="288" style="width:216.0pt">
-<tbody>
-<tr>
-<td style="padding:26.25pt 0cm 11.25pt 0cm">
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">PASSENGER NAME:</span></b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333"><br>
-<br>
-'.$cabs_Name.'</span><u></u><u></u></p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-<td width="290" valign="top" style="width:217.5pt;padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="288" style="width:216.0pt">
-<tbody>
-<tr>
-<td style="padding:26.25pt 0cm 11.25pt 0cm">
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">JOURNEY DATE:</span></b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333"><br>
-<br>
-'.$BookingTime.'</span><u></u><u></u></p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td valign="top" style="border:none;border-bottom:solid #eaeaea 1.0pt;padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="580" style="width:435.0pt">
-<tbody>
-<tr>
-<td width="290" valign="top" style="width:217.5pt;padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="288" style="width:216.0pt">
-<tbody>
-<tr>
-<td style="padding:18.75pt 0cm 11.25pt 0cm">
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">PICKUP LOCATION:</span></b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333"><br>
-<br>
-'.$FromDataAddress.'</span><u></u><u></u></p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-<td width="290" valign="top" style="width:217.5pt;padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="288" style="width:216.0pt">
-<tbody>
-<tr>
-<td style="padding:18.75pt 0cm 11.25pt 0cm">
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">DROP OFF DESTINATION:</span></b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333"><br>
-<br>
-'.$ToDataAddress.'</span><u></u><u></u></p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top" style="padding:0cm 0cm 0cm 0cm;border-radius:10px">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="350" style="width:262.5pt">
-<tbody>
-<tr>
-<td valign="top" style="border:none;border-bottom:solid #eaeaea 1.0pt;padding:18.75pt 0cm 11.25pt 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellpadding="0" width="250" style="width:187.5pt">
-<tbody>
-<tr>
-<td style="background:#279b00;padding:7.5pt 3.75pt 7.5pt 7.5pt">
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:white">FARE: £'.$cabs_veh_p.'</span></b><u></u><u></u></p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td valign="top" style="border-top:dotted #e9e9e9 1.0pt;border-left:none;border-bottom:dotted #e9e9e9 1.0pt;border-right:none;padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="580" style="width:435.0pt">
-<tbody>
-<tr>
-<td width="290" valign="top" style="width:217.5pt;padding:11.25pt 0cm 0cm 0cm">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="280" style="width:210.0pt">
-<tbody>
-<tr style="height:30.0pt">
-<td colspan="2" style="padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">TRIP STATISTICS</span></b><u></u><u></u></p>
-</td>
-</tr>
-<tr style="height:30.0pt">
-<td width="138" style="width:103.5pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">DISTANCE:</span></b><u></u><u></u></p>
-</td>
-<td width="137" style="width:102.75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="right" style="text-align:right"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">1.00 miles</span><u></u><u></u></p>
-</td>
-</tr>
-<tr style="height:30.0pt">
-<td width="138" style="width:103.5pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal"><u></u>&nbsp;<u></u></p>
-</td>
-<td width="137" style="width:102.75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="right" style="text-align:right"><u></u>&nbsp;<u></u></p>
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top" style="padding:0cm 0cm 0cm 0cm"></td>
-</tr>
-</tbody>
-</table>
-</td>
-<td width="290" valign="top" style="width:217.5pt;padding:11.25pt 0cm 0cm 0cm">
-<div align="right">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="240" style="width:180.0pt">
-<tbody>
-<tr style="height:30.0pt">
-<td colspan="2" style="padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">FARE BREAKDOWN</span></b><u></u><u></u></p>
-</td>
-</tr>
-<tr style="height:30.0pt">
-<td width="131" style="width:98.25pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">FARE:</span></b><u></u><u></u></p>
-</td>
-<td width="109" style="width:81.75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="right" style="text-align:right"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">£'.$cabs_veh_p.'</span><u></u><u></u></p>
-</td>
-</tr>
-<tr style="height:30.0pt">
-<td width="131" style="width:98.25pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal"><u></u>&nbsp;<u></u></p>
-</td>
-<td width="109" style="width:81.75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="right" style="text-align:right"><u></u>&nbsp;<u></u></p>
-</td>
-</tr>
-<tr style="height:30.0pt">
-<td width="131" style="width:98.25pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal"><u></u>&nbsp;<u></u></p>
-</td>
-<td width="109" style="width:81.75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="right" style="text-align:right"><u></u>&nbsp;<u></u></p>
-</td>
-</tr>
-<tr style="height:30.0pt">
-<td width="131" style="width:98.25pt;border:none;border-top:solid #cccccc 1.0pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">TOTAL COST:</span></b><u></u><u></u></p>
-</td>
-<td width="109" style="width:81.75pt;border:none;border-top:solid #cccccc 1.0pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
-<p class="MsoNormal" align="right" style="text-align:right"><b><span style="font-family:&quot;Arial&quot;,sans-serif;color:#3165f3">£'.$cabs_veh_p.'</span></b><u></u><u></u></p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-<td style="padding:0cm 0cm 0cm 0cm"></td>
-</tr>
-<tr>
-<td valign="top" style="padding:0cm 0cm 0cm 0cm">
-<div align="center">
-<table class="m_6757093997842635877m_5944428788199314964MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="580" style="width:435.0pt">
-<tbody>
-<tr>
-<td valign="top" style="padding:11.25pt 0cm 11.25pt 0cm">
-<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:9.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">Thank</span><span style="font-size:9.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#1f497d">
-</span><span style="font-size:9.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#333333">you for choosing Liberty Cars - 020 8900 5555. We appreciate your business.</span><u></u><u></u></p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-<td style="padding:0cm 0cm 0cm 0cm"></td>
-</tr>
-</tbody>
-</table>';
-
-
-$headers = array('Content-Type: text/html; charset=UTF-8','From: Liberty Cars <bookings@minicabsinlondon.com>', 'Cc: Liberty Cars 2 <bookings@minicabsinlondon.com>');
-
-				 
-				wp_mail( $to, $subject, $message, $headers );
-
-
-
-		/// send mail ends
-
-
+		//Send Email.
 ?>
-<h3> Payment Receipt Details</h3>
-<p>Receipt Id : <?php echo $receipt['receiptId']; ?></p>
-<p>Payment Reference : <?php echo $receipt['yourPaymentReference']; ?></p>
-<p>Result : <?php echo $receipt['result']; ?></p>
-<p>Paid on: <?php echo $receipt['createdAt']; ?></p>
-<p>Authorization Reference : <? echo $BookingResponseXML->AuthorizationReference->__toString(); ?></p>
-<p>BookingReference : <? echo $BookingResponseXML->BookingReference->__toString(); ?></p>
+<!-- COVER WRAPPER -->
+    <div class="cover-wraper pages-header">
+      
+      <!-- HEADER SECTION -->
+      <div class="header-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-3">
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" alt=""></a>
+            </div>
+            <div class="col-md-8 col-sm-9">
+
+              <div class="top-login">
+                <div class="authenti"><a href="#">Login</a> / <a href="#">Register</a></div>
+                <div class="tele">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <a href="tel:02084275555">020 8427 5555</a>
+                </div>
+              </div>
+              <div class="menu fixed">
+                <!-- Navigation -->
+
+                <nav class="nav-collapse">
+                  <?php /* Primary navigation */
+                  wp_nav_menu( array(
+                      'menu' => 'top_menu',
+                      'depth' => 2,
+                      'container' => false,
+                      'menu_class' => 'nav navbar-nav',
+                      //Process nav menu using our custom nav walker
+                      'walker' => new wp_bootstrap_navwalker())
+                  );
+                  ?>
+                </nav>
+
+                <!-- Navigation End -->                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- HEADER SECTION END -->      
+
+    </div>
+    <!-- COVER WRAPPER END-->
+
+    <!-- HEADER CONTENT -->
+    
+    <div class="page-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1 class="animated fadeIn"><i class="fa fa-car car-yello-icon" aria-hidden="true"></i> booking success</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER CONTENT END -->
+
+<!-- PAGE CONTENT -->
+<div class="page-content" id="price-blk-scanner">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="booking-input-block basic-form">
+
+
+						<form>
+
+		                  	<h3 class="box-title"><i class="fa fa-address-card-o car-yello-icon no-anim" aria-hidden="true"></i>  Payment Receipt Details </h3>
+
+			               	<div class="blk-car-pattern">
+
+			               		<!-- This is basic layout -->
+			                    <div class="bib-common">
+			                      <label>hello</label>
+			                      <input type="text" name="" value="hello" disabled>
+			                    </div>
+
+			                    <div class="bib-common">
+			                      <label>Receipt Id :</label>
+			                      <input type="text" name="" value="<?php echo $receipt['receiptId']; ?>" disabled>
+			                    </div>	
+
+			                    <div class="bib-common">
+			                      <label>Payment Reference :</label>
+			                      <input type="text" name="" value="<?php echo $receipt['yourPaymentReference']; ?>" disabled>
+			                    </div> 	
+
+			                    <div class="bib-common">
+			                      <label>Result :</label>
+			                      <input type="text" name="" value="<?php echo $receipt['result']; ?>" disabled>
+			                    </div>
+
+			                    <div class="bib-common">
+			                      <label>Paid on:</label>
+			                      <input type="text" name="" value="<?php echo $receipt['createdAt']; ?>" disabled>
+			                    </div>
+
+			                    <div class="bib-common">
+			                      <label>Authorization Reference :</label>
+			                      <input type="text" name="" value="<? echo $BookingResponseXML->AuthorizationReference->__toString(); ?>" disabled>
+			                    </div>
+
+			                    <div class="bib-common">
+			                      <label>BookingReference :</label>
+			                      <input type="text" name="" value="<? echo $BookingResponseXML->BookingReference->__toString(); ?>" disabled>
+			                    </div>
+
+			               	</div>
+							<input type="submit" value="Cancel">
+
+		 				</form>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php
 

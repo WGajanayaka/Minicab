@@ -1,11 +1,10 @@
 <?php
 
 
- $api_request='https://cxs-staging.autocab.net/api/agent';
- // $api_request='https://cxs.autocab.net/api/agent';
+ //$api_request='https://cxs-staging.autocab.net/api/agent'; //Test Server
+ $api_request='https://cxs.autocab.net/api/agent'  ; //Production Server 
 
  $action=$_POST['action'];
- //print_r ( $action);
  //$compare_str=strcmp($action,"cabform_request_data_ajax_call");
  
 $cabs_AgentEvents = 'LocationUpdate VehicleArrived PassengerOnBoard';
@@ -82,8 +81,8 @@ $cabs_AlertMethod=  'Textback';
 	 $FromCoordinateDataLongitude=$_POST['form_data_req']['5']['value'];
 	 
 	 $ToDataAddress=$_POST['form_data_req']['6']['value'];
-	 $ToCoordinateDataLatitude=$_POST['form_data_req']['8']['value'];
-	 $ToCoordinateDataLongitude=$_POST['form_data_req']['7']['value'];
+	 $ToCoordinateDataLatitude=$_POST['form_data_req']['7']['value'];
+	 $ToCoordinateDataLongitude=$_POST['form_data_req']['8']['value'];
 	 
 	 $BookingTime=$_POST['form_data_req']['9']['value'];
 	 $dateConvertISO=strtotime( $BookingTime );

@@ -58,7 +58,7 @@
         jQuery.ajax({
              type   : "POST",
 		//	             dataType: 'json',
-             url    : "/liberty_cars/wp-admin/admin-ajax.php",
+             url    : "/wp-admin/admin-ajax.php",
  		    data: { 
 					action: "cabform_request_data_ajax_call_cancel",
 					form_data : data_var_ajaxSubmitcancel
